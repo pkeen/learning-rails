@@ -62,6 +62,9 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # learn-rails
+  gem 'better_errors'
 end
 
 group :test do
@@ -70,3 +73,10 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# learn-rails 
+gem 'bootstrap-sass' 
+gem 'gibbon' 
+gem 'high_voltage' 
+gem 'jquery-rails' 
+
