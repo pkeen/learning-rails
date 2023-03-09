@@ -80,3 +80,7 @@ gem 'gibbon'
 gem 'high_voltage' 
 gem 'jquery-rails' 
 
+# sendinblue
+gem 'sendinblue'
+
+

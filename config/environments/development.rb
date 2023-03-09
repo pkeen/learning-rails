@@ -35,9 +35,23 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
+  # CHANGES HERE ----
+  # Do care if the mailer can't send!
+  config.action_mailer.raise_delivery_errors = true
 
-  # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp-relay.sendinblue.com'
+    :port => 587,
+    :user_name => Rails.application.credetials.dig(:email_provider_login)
+    :password => Rails.application.credetials.dig(:smtp_key)
+    :authentication => ‘login’,
+    :enable_starttls_auto => true
+  }
+  # CHANGES END -----
 
   config.action_mailer.perform_caching = false
 
